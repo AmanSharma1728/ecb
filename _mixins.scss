@@ -1,0 +1,26 @@
+@mixin boiler-plate() {
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond-to($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
