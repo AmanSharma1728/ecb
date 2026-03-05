@@ -419,6 +419,10 @@
     justify-content: start;
     align-content: start;
 
+    @include respond-to(1440px) {
+      padding-left: 13rem;
+    }
+
     .match-details {
       @include flex-center();
       max-height: 4.65rem;
