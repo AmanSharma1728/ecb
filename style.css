@@ -435,7 +435,7 @@ body {
   color: rgb(29, 29, 29);
 }
 .laptop .view {
-  padding-left: 8.5rem;
+  padding-left: 9.5rem;
   flex: 1 1 auto;
   align-self: start;
   min-height: 100vh;
@@ -449,6 +449,11 @@ body {
 @media (min-width: 1440px) {
   .laptop .view {
     padding-left: 10.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .laptop .view {
+    padding-left: 14.4rem;
   }
 }
 .laptop .view .match-details {
