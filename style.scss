@@ -411,7 +411,7 @@
   }
 
   .view {
-    padding-left: 9.5rem;
+    padding-left: 8.5rem;
     flex: 1 1 auto;
     align-self: start;
     min-height: 100vh;
@@ -420,7 +420,7 @@
     align-content: start;
 
     @include respond-to(1440px) {
-      padding-left: 13rem;
+      padding-left: 10.5rem;
     }
 
     .match-details {
