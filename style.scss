@@ -3,7 +3,16 @@
 
 @include boiler-plate();
 
-.header {
+.mobile-view {
+  padding-top: 3.5rem;
+
+  @include respond-to(1024px) {
+    display: none;
+  }
+}
+
+.mobile.header {
+  position: fixed;
   width: 100%;
   height: 3.5rem;
   overflow: hidden;
@@ -12,7 +21,15 @@
   justify-content: space-between;
   align-items: stretch;
   gap: 20%;
-  box-shadow: 0 0.5rem 0.4rem #0a0a0a;
+  box-shadow: 0 0.1rem 0.5rem #1d1c1c;
+
+  @include respond-to(1024px) {
+    display: none;
+  }
+
+  @media (max-width: 320px) {
+    gap: 10%;
+  }
 
   img {
     width: 100px;
@@ -48,22 +65,19 @@
 
       font-weight: 500;
       height: 100%;
-      padding: 0.875rem;
+      padding: 1rem;
       background-color: #004880;
       @include flex-center();
       gap: 2rem;
 
       .text {
         font-size: 0.7rem;
-        @media (max-width: 320px) {
-          display: none;
-        }
       }
 
       .hamburger {
         cursor: pointer;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         background-color: white;
         // @include flex-center(column);
         // gap: 0.2rem;
@@ -82,6 +96,10 @@
   @include flex-center();
   padding: 0.5rem;
   background: linear-gradient(to right, #003e6c 50%, #005699);
+
+  @include respond-to(768px) {
+    padding: 1rem;
+  }
 
   .match-result {
     flex: 0.5;
@@ -108,12 +126,18 @@
     border-left: 1px solid #2d6085;
     padding: 0.5rem;
 
+    @include respond-to(768px) {
+      padding-left: 1.5rem;
+      border-left: 0.09rem solid #2d6085;
+    }
+
     @media (max-width: 320px) {
       font-size: 0.9rem;
     }
 
     .loser {
       color: #7fa2bc;
+      margin-bottom: 0.5rem;
     }
 
     .winner {
@@ -137,12 +161,25 @@
   align-items: start;
   justify-content: end;
 
+  @include respond-to(1024px) {
+    background-image:
+      linear-gradient(rgba(1, 20, 40, 0), #011428 80%),
+      url("assets/bg-image.png");
+    flex: 1 1 auto;
+    margin-bottom: 0;
+    min-height: 130vh;
+  }
+
   .headlines {
     @include flex-center(column);
     align-items: start;
     gap: 0.4rem;
     padding: 1rem;
     cursor: pointer;
+
+    @include respond-to(1024px) {
+      padding: 2.5rem;
+    }
 
     .video-btn {
       background-color: #ee393f;
@@ -157,6 +194,10 @@
     .headline {
       color: white;
       text-decoration: none;
+
+      @include respond-to(768px) {
+        font-size: 2.5rem;
+      }
 
       &:visited {
         color: white;
@@ -178,6 +219,12 @@
         font-size: 1.3rem;
         line-height: 1.1;
       }
+
+      @include respond-to(1024px) {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        width: 60%;
+      }
     }
     .date {
       font-size: 0.8rem;
@@ -191,7 +238,13 @@
       border-radius: 5px;
       font-size: 0.8rem;
       cursor: pointer;
-      border-bottom: 5px solid #e40606;
+
+      box-shadow: 0 0.2rem 0.1rem #f10808;
+
+      &:hover {
+        background-color: #005699;
+        box-shadow: 0 0.1rem 0.2rem #201f1f;
+      }
 
       @media (max-width: 320px) {
         font-size: 0.8rem;
@@ -249,6 +302,10 @@
 
         text-transform: capitalize;
 
+        @include respond-to(768px) {
+          font-size: 1.5rem;
+        }
+
         @media (max-width: 320px) {
           font-size: 1rem;
         }
@@ -261,4 +318,217 @@
       }
     }
   }
+}
+
+.laptop {
+  @include flex-center();
+  align-items: stretch;
+
+  .sidebar {
+    min-height: 100vh;
+    flex: 0 0 12%;
+    background-color: #005699;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12%;
+
+    @include flex-center(column);
+    justify-content: start;
+    gap: 0.5rem;
+
+    .logo-image {
+      width: 100%;
+      object-fit: cover;
+      border-left: 5px solid rgb(91, 174, 207);
+
+      &:hover {
+        border-left: 5px solid #ee393f;
+      }
+      cursor: pointer;
+    }
+
+    .login-btn {
+      cursor: pointer;
+      padding: 0.7rem 1.4rem;
+      background-color: #ee393f;
+      box-shadow: 0 3px red;
+      border: none;
+      font-weight: 500;
+      border-radius: 5px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      text-align: center;
+      width: 80%;
+      margin-bottom: 1rem;
+
+      &:hover {
+        background-color: rgb(236, 40, 40);
+      }
+    }
+
+    ul {
+      list-style: none;
+
+      color: white;
+      opacity: 0.6;
+
+      @include flex-center(column);
+      justify-content: start;
+
+      text-transform: uppercase;
+      font-size: 0.68rem;
+      font-weight: 600;
+
+      li {
+        width: 100%;
+        @include flex-center();
+        justify-content: start;
+        gap: 0.8rem;
+        cursor: pointer;
+        padding: 0.75rem;
+
+        &:hover {
+          background-color: #023d6bb9;
+        }
+
+        .sidebar-icon {
+          width: 13%;
+        }
+
+        .text {
+        }
+
+        .small {
+          font-size: 0.4rem;
+          color: rgb(29, 29, 29);
+        }
+      }
+    }
+  }
+
+  .view {
+    padding-left: 9.5rem;
+    flex: 1 1 auto;
+    align-self: start;
+    min-height: 100vh;
+    @include flex-center(column);
+    justify-content: start;
+    align-content: start;
+
+    .match-details {
+      @include flex-center();
+      max-height: 4.65rem;
+      width: 100%;
+      .match-result {
+        flex: 0 0 33%;
+      }
+
+      .details {
+        flex: 0 0 33%;
+        border-right: 0.09rem solid #2d6085;
+      }
+
+      .view-match {
+        flex: 1 1 auto;
+        @include flex-center();
+        justify-content: end;
+        align-items: end;
+      }
+
+      .view-match-btn {
+        @include flex-center();
+        gap: 0.4rem;
+
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        background-color: #ee393f;
+        box-shadow: 0 3px red;
+        border: none;
+        font-weight: 500;
+        border-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        text-align: center;
+
+        .view-match-icon {
+          width: 10%;
+        }
+
+        &:hover {
+          background-color: #005699;
+          box-shadow: 0 0.1rem 0.2rem #201f1f;
+        }
+      }
+    }
+
+    .cards {
+      @include flex-center();
+      gap: 1rem;
+      width: 100%;
+      padding: 2.5rem;
+      padding-top: 0;
+
+      .card {
+        flex: 1 1 auto;
+        width: 100%;
+        height: 45vh;
+        @include flex-center(column);
+        align-items: start;
+        justify-content: end;
+        padding: 1rem;
+        gap: 1rem;
+
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%),
+          url(https://jayant061.github.io/ecb-homepage/images/card-1.png);
+        object-fit: cover;
+
+        .video-btn {
+          background-color: #ee393f;
+          padding: 0.3rem;
+          font-size: 0.9rem;
+          font-weight: 750;
+          max-width: fit-content;
+        }
+
+        .headline {
+          color: #f5f1f1;
+          text-decoration: none;
+          text-transform: capitalize;
+
+          &:visited {
+            color: #f5f1f1;
+            text-decoration: none;
+          }
+          &:hover {
+            color: #f5f1f1;
+            text-decoration: underline;
+          }
+          &:active {
+            color: #f5f1f1;
+            text-decoration: underline;
+          }
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 550;
+        }
+
+        .date {
+          font-size: 0.8rem;
+          color: #419bc8;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.small {
+  display: none;
 }
