@@ -611,3 +611,9 @@
   display: block;
   z-index: 100000;
 }
+
+.laptop {
+  .small {
+    display: none;
+  }
+}
