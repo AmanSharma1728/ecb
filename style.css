@@ -10,15 +10,6 @@ body {
   width: 100%;
 }
 
-.mobile-view {
-  padding-top: 3.5rem;
-}
-@media (min-width: 1024px) {
-  .mobile-view {
-    display: none;
-  }
-}
-
 .mobile.header {
   position: fixed;
   width: 100%;
@@ -120,6 +111,60 @@ body {
     padding: 0.5rem;
     gap: 0.8rem;
   }
+}
+
+.mobile-view {
+  padding-top: 3.5rem;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .mobile-view {
+    display: none;
+  }
+}
+
+.mobile-sidebar {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #005699;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+}
+.mobile-sidebar ul {
+  list-style: none;
+  color: white;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.mobile-sidebar ul li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 0.75rem;
+}
+.mobile-sidebar ul li:hover {
+  background-color: rgba(2, 61, 107, 0.7254901961);
+}
+.mobile-sidebar ul li .sidebar-icon {
+  width: 13%;
+}
+.mobile-sidebar ul li .small {
+  font-size: 0.4rem;
+  color: rgb(29, 29, 29);
 }
 
 .match-details {
@@ -601,4 +646,12 @@ body {
 
 .small {
   display: none;
+}
+
+.inactive {
+  display: none;
+}
+
+.mobile-sidebar.active {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
