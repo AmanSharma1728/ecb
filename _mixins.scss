@@ -48,7 +48,6 @@
       transition: all 0.3s ease;
     }
 
-    &:hover,
     &.active {
       .line-1 {
         transform: translateY($line-height + $hamburger-gap) rotate(45deg);
