@@ -39,7 +39,7 @@ body {
     display: none;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 359px) {
   .mobile.header {
     gap: 10%;
   }
@@ -92,10 +92,34 @@ body {
   font-size: 0.7rem;
 }
 .mobile.header .options .hamburger-menu .hamburger {
-  cursor: pointer;
-  width: 20px;
+  width: 22px;
   height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: #004880;
+}
+.mobile.header .options .hamburger-menu .hamburger .line {
+  width: 100%;
+  height: 4px;
   background-color: white;
+  transition: all 0.3s ease;
+}
+.mobile.header .options .hamburger-menu .hamburger:hover .line-1, .mobile.header .options .hamburger-menu .hamburger.active .line-1 {
+  transform: translateY(8px) rotate(45deg);
+}
+.mobile.header .options .hamburger-menu .hamburger:hover .line-2, .mobile.header .options .hamburger-menu .hamburger.active .line-2 {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.mobile.header .options .hamburger-menu .hamburger:hover .line-3, .mobile.header .options .hamburger-menu .hamburger.active .line-3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+@media (max-width: 359px) {
+  .mobile.header .options .hamburger-menu {
+    padding: 0.5rem;
+    gap: 0.8rem;
+  }
 }
 
 .match-details {
@@ -530,6 +554,9 @@ body {
   background-image: linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%), url(https://jayant061.github.io/ecb-homepage/images/card-1.png);
   -o-object-fit: cover;
      object-fit: cover;
+}
+.laptop .view .cards .card:hover {
+  transform: scale(1.03);
 }
 .laptop .view .cards .card .video-btn {
   background-color: #ee393f;
