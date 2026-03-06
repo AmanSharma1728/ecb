@@ -675,4 +675,27 @@ body {
 
 .laptop .small {
   display: none;
+}
+
+.expand {
+  display: none;
+}
+
+.expand.active {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+}
+.expand.active .col {
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+.expand.active .col:hover {
+  background-color: #011428;
 }/*# sourceMappingURL=style.css.map */

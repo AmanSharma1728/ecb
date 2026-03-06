@@ -7,7 +7,12 @@ hamburger_menu.addEventListener("click", () => {
   mobile_sidebar.classList.toggle("active");
 });
 
-const login_btn = document.querySelector(".login-btn");
-login_btn.addEventListener("click", () => {
-  alert("logged in");
-});
+const li_array = document.querySelectorAll(".topic");
+const expand_array = document.querySelectorAll(".expand");
+
+for (let i = 0; i < li_array.length; i += 1) {
+  li_array[i].addEventListener("click", () => {
+    li_array[i].classList.toggle("inactive");
+    expand_array[i].classList.toggle("active");
+  });
+}

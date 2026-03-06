@@ -617,3 +617,24 @@
     display: none;
   }
 }
+
+.expand {
+  display: none;
+}
+
+.expand.active {
+  width: 100%;
+  @include flex-center(column);
+  justify-content: start;
+  .col {
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: #011428;
+    }
+  }
+}
