@@ -593,7 +593,7 @@ body {
 }
 @media (min-width: 2560px) {
   .laptop .view .match-details {
-    max-height: 6rem;
+    height: 8rem;
   }
 }
 .laptop .view .match-details .match-result {
