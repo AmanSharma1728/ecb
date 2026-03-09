@@ -442,7 +442,6 @@
       list-style: none;
 
       color: white;
-      opacity: 0.6;
 
       @include flex-center(column);
       justify-content: start;
@@ -458,6 +457,7 @@
         gap: 0.8rem;
         cursor: pointer;
         padding: 0.75rem;
+        opacity: 0.6;
 
         &:hover {
           background-color: #023d6bb9;
@@ -675,6 +675,84 @@
 
     &:hover {
       background-color: #011428;
+    }
+  }
+}
+
+.expanded-sidebar {
+  display: none;
+}
+
+@keyframes slider {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 65vw;
+  }
+}
+
+.expanded-sidebar.active,
+.expanded-sidebar:hover {
+  display: block;
+  position: fixed;
+  left: 12%;
+
+  animation: slider 0.5s ease forwards;
+  background-color: #013a65;
+  height: 100vh;
+  top: 0;
+  padding: 3rem;
+
+  @include respond-to(1024px) {
+    left: 14.5%;
+  }
+
+  @include respond-to(1200px) {
+    left: 12%;
+  }
+
+  @include respond-to(1440px) {
+    padding: 4rem;
+    left: 10%;
+  }
+
+  @include respond-to(1920px) {
+    padding: 7rem;
+    left: 10.4%;
+  }
+
+  @include respond-to(2560px) {
+    padding: 8rem;
+    left: 5.9%;
+  }
+
+  .main-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .contents {
+    @include flex-center();
+    margin-top: 4rem;
+    text-transform: capitalize;
+    justify-content: space-between;
+    align-items: start;
+
+    .content {
+      @include flex-center(column);
+      gap: 1.8rem;
+      align-items: start;
+      font-size: 1.05rem;
+      .cells {
+        @include flex-center(column);
+        gap: 0.6rem;
+        opacity: 0.6;
+        font-size: 0.8rem;
+        font-weight: 100;
+      }
     }
   }
 }

@@ -505,7 +505,6 @@ body {
 .laptop .sidebar ul {
   list-style: none;
   color: white;
-  opacity: 0.6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -525,6 +524,7 @@ body {
   gap: 0.8rem;
   cursor: pointer;
   padding: 0.75rem;
+  opacity: 0.6;
 }
 .laptop .sidebar ul li:hover {
   background-color: rgba(2, 61, 107, 0.7254901961);
@@ -747,4 +747,99 @@ body {
 }
 .expand.active .col:hover {
   background-color: #011428;
+}
+
+.expanded-sidebar {
+  display: none;
+}
+
+@keyframes slider {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 65vw;
+  }
+}
+.expanded-sidebar.active,
+.expanded-sidebar:hover {
+  display: block;
+  position: fixed;
+  left: 12%;
+  animation: slider 0.5s ease forwards;
+  background-color: #013a65;
+  height: 100vh;
+  top: 0;
+  padding: 3rem;
+}
+@media (min-width: 1024px) {
+  .expanded-sidebar.active,
+  .expanded-sidebar:hover {
+    left: 14.5%;
+  }
+}
+@media (min-width: 1200px) {
+  .expanded-sidebar.active,
+  .expanded-sidebar:hover {
+    left: 12%;
+  }
+}
+@media (min-width: 1440px) {
+  .expanded-sidebar.active,
+  .expanded-sidebar:hover {
+    padding: 4rem;
+    left: 10%;
+  }
+}
+@media (min-width: 1920px) {
+  .expanded-sidebar.active,
+  .expanded-sidebar:hover {
+    padding: 7rem;
+    left: 10.4%;
+  }
+}
+@media (min-width: 2560px) {
+  .expanded-sidebar.active,
+  .expanded-sidebar:hover {
+    padding: 8rem;
+    left: 5.9%;
+  }
+}
+.expanded-sidebar.active .main-heading,
+.expanded-sidebar:hover .main-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  width: 100%;
+}
+.expanded-sidebar.active .contents,
+.expanded-sidebar:hover .contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  text-transform: capitalize;
+  justify-content: space-between;
+  align-items: start;
+}
+.expanded-sidebar.active .contents .content,
+.expanded-sidebar:hover .contents .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  align-items: start;
+  font-size: 1.05rem;
+}
+.expanded-sidebar.active .contents .content .cells,
+.expanded-sidebar:hover .contents .content .cells {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0.6;
+  font-size: 0.8rem;
+  font-weight: 100;
 }/*# sourceMappingURL=style.css.map */
