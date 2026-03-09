@@ -452,6 +452,26 @@ body {
   justify-content: start;
   gap: 0.5rem;
 }
+@media (min-width: 1024px) {
+  .laptop .sidebar {
+    width: 15%;
+  }
+}
+@media (min-width: 1200px) {
+  .laptop .sidebar {
+    width: 12%;
+  }
+}
+@media (min-width: 1440px) {
+  .laptop .sidebar {
+    width: 10.5%;
+  }
+}
+@media (min-width: 2560px) {
+  .laptop .sidebar {
+    width: 6%;
+  }
+}
 .laptop .sidebar .logo-image {
   width: 100%;
   -o-object-fit: cover;
@@ -528,14 +548,39 @@ body {
   justify-content: start;
   align-content: start;
 }
+@media (min-width: 1024px) {
+  .laptop .view {
+    padding-left: 9rem;
+  }
+}
+@media (min-width: 1100px) {
+  .laptop .view {
+    padding-left: 10rem;
+  }
+}
+@media (min-width: 1200px) {
+  .laptop .view {
+    padding-left: 11rem;
+  }
+}
+@media (min-width: 1200px) {
+  .laptop .view {
+    padding-left: 9.5rem;
+  }
+}
 @media (min-width: 1440px) {
   .laptop .view {
-    padding-left: 10.5rem;
+    padding-left: 9.4rem;
   }
 }
 @media (min-width: 1920px) {
   .laptop .view {
     padding-left: 14.4rem;
+  }
+}
+@media (min-width: 2560px) {
+  .laptop .view {
+    padding-left: 9.5rem;
   }
 }
 .laptop .view .match-details {
@@ -545,6 +590,11 @@ body {
   align-items: center;
   max-height: 4.65rem;
   width: 100%;
+}
+@media (min-width: 2560px) {
+  .laptop .view .match-details {
+    max-height: 6rem;
+  }
 }
 .laptop .view .match-details .match-result {
   flex: 0 0 33%;
@@ -610,8 +660,7 @@ body {
   padding: 1rem;
   gap: 1rem;
   background-image: linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%), url(https://jayant061.github.io/ecb-homepage/images/card-1.png);
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
 }
 .laptop .view .cards .card:hover {
   transform: scale(1.03);
