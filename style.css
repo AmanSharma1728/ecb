@@ -127,7 +127,7 @@ body {
 .mobile-sidebar {
   display: none;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #005699;
   position: absolute;
   top: 3.5rem;
@@ -154,7 +154,9 @@ body {
   justify-content: space-between;
   gap: 0.8rem;
   cursor: pointer;
-  padding: 0.75rem;
+  padding: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   border-bottom: 1px solid grey;
 }
 .mobile-sidebar ul li:hover {
@@ -166,11 +168,16 @@ body {
   justify-content: center;
   align-items: center;
   justify-content: start;
-  gap: 0.5rem;
+  gap: 0.8rem;
   width: 100%;
 }
 .mobile-sidebar ul li .sidebar-icon {
-  width: 4%;
+  width: 4.5%;
+}
+@media (min-width: 768px) {
+  .mobile-sidebar ul li .sidebar-icon {
+    width: 1.8%;
+  }
 }
 .mobile-sidebar ul li .small {
   display: flex;
@@ -368,6 +375,9 @@ body {
   align-items: start;
   gap: 0.5rem;
 }
+.news-articles .news .image {
+  flex: 0 0 40%;
+}
 .news-articles .news .image img {
   width: 100%;
 }
@@ -548,11 +558,6 @@ body {
   justify-content: start;
   align-content: start;
 }
-@media (min-width: 1024px) {
-  .laptop .view {
-    padding-left: 9rem;
-  }
-}
 @media (min-width: 1100px) {
   .laptop .view {
     padding-left: 10rem;
@@ -560,12 +565,7 @@ body {
 }
 @media (min-width: 1200px) {
   .laptop .view {
-    padding-left: 11rem;
-  }
-}
-@media (min-width: 1200px) {
-  .laptop .view {
-    padding-left: 9.5rem;
+    padding-left: 9rem;
   }
 }
 @media (min-width: 1440px) {
@@ -642,15 +642,16 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
   width: 100%;
   padding: 2.5rem;
   padding-top: 0;
+  height: 50vh;
 }
 .laptop .view .cards .card {
   flex: 1 1 auto;
   width: 100%;
-  height: 45vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -659,6 +660,7 @@ body {
   justify-content: end;
   padding: 1rem;
   gap: 1rem;
+  transition: all 0.4s ease;
   background-image: linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%), url(https://jayant061.github.io/ecb-homepage/images/card-1.png);
   background-size: cover;
 }
@@ -699,6 +701,17 @@ body {
   font-size: 0.8rem;
   color: #419bc8;
   margin-bottom: 1rem;
+}
+.laptop .view .cards .card.card-1 {
+  flex: 0 0 45%;
+}
+.laptop .view .cards .card.card-2 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%), url(https://jayant061.github.io/ecb-homepage/images/card-2.png);
+  flex: 0 0 26%;
+}
+.laptop .view .cards .card.card-3 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0) 53%, rgb(0, 47, 82) 80%), url(https://jayant061.github.io/ecb-homepage/images/card-3.png);
+  flex: 0 0 26%;
 }
 @media (max-width: 1023px) {
   .laptop {

@@ -27,8 +27,4 @@ for (let i = 0; i < option_array.length; i += 1) {
   option_array[i].addEventListener("mouseout", () => {
     expanded_sidebar_array[i].classList.toggle("active");
   });
-
-  // option_array[i].addEventListener("click", () => {
-  //   expanded_sidebar_array[i].classList.toggle("active");
-  // });
 }
