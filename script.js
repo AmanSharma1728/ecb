@@ -9,6 +9,7 @@ hamburger_menu.addEventListener("click", () => {
 
 const li_array = document.querySelectorAll(".topic");
 const expand_array = document.querySelectorAll(".expand");
+const col_array = document.querySelectorAll(".col");
 
 for (let i = 0; i < li_array.length; i += 1) {
   li_array[i].addEventListener("click", () => {

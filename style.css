@@ -757,9 +757,10 @@ body {
   padding-left: 1rem;
   text-transform: capitalize;
   font-size: 1rem;
+  border-bottom: 0.5px solid white;
 }
 .expand.active .col:hover {
-  background-color: #011428;
+  background-color: #02264c;
 }
 
 .expanded-sidebar {
@@ -855,4 +856,16 @@ body {
   opacity: 0.6;
   font-size: 0.8rem;
   font-weight: 100;
+}
+
+.topic.inactive {
+  background-color: #022a54;
+}
+
+.expand.active {
+  background-color: #011428;
+}
+
+.expand col {
+  border-bottom: 2px solid white;
 }/*# sourceMappingURL=style.css.map */
